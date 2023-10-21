@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janric Malate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-main {
+            background-color: #EEEFF1;
+        }
+        .text-main {
+            color: #252626;
+        }
+    </style>
+</head>
+<body class="bg-main text-main h-screen p-5">
+    
+    {% include 'webpage/navbar.html' %}
+
+    {% block content %}
+    {% endblock content %}
+    
+    <script>
+
+        const navLinks = document.getElementsByClassName("nav-link");
+
+        let navKeys = Object.keys(navLinks);
+
+        navKeys.forEach((navKey) => {
+          //console.log(navLinks[navKey]);
+          navLinks[navKey].addEventListener("click",(e)=>{
+            navLinks[0].classList.remove("rounded", "bg-zinc-950", "text-neutral-100");
+            navLinks[1].classList.remove("rounded", "bg-zinc-950", "text-neutral-100");
+            navLinks[2].classList.remove("rounded", "bg-zinc-950", "text-neutral-100");
+            navLinks[3].classList.remove("rounded", "bg-zinc-950", "text-neutral-100");
+            e.target.classList.add("rounded", "bg-zinc-950", "text-neutral-100");
+          });
+        });
+
+    </script>
+</body>
+</html>

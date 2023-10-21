@@ -1,0 +1,4 @@
+__pycache__/
+env/
+env_variables.txt
+db.sqlite3
