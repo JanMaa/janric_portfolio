@@ -1,4 +1,6 @@
 const navLinks = document.getElementsByClassName("nav-link");
+const button = document.querySelector('#menu-button');
+const menu = document.querySelector('#navbar-default');
 
 let navKeys = Object.keys(navLinks);
 
@@ -12,3 +14,7 @@ navKeys.forEach((navKey) => {
     e.target.classList.add("rounded", "bg-zinc-950", "text-neutral-100");
   });
 });
+
+button.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+}); 
